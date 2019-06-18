@@ -1,4 +1,4 @@
-//*******************************//
+    //*******************************//
 //server.js - This file is the initial starting point for the Node/Express server.
 //*******************************//
 
@@ -25,14 +25,14 @@ app.use(express.json());
 //------------------------------//
 var exphbs = require("express-handlebars");
 
-app.enginne("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view enginge", "handlebars");
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
 //------------------------------//
 
 // Import routes and give the server access to them
 //------------------------------//
-var routes = require("./controllers.burgerController.js");
+var routes = require("./controllers/burgers_controller.js");
 
 app.use(routes);
 
