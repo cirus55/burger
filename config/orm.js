@@ -13,9 +13,9 @@ var orm = {
         });
     },
     createOne: function (vals, cb) {
-        var queryString = "INSERT INTO BURGERS +" ;
+        var queryString = "INSERT INTO BURGERS " +
         "(burger_name, devoured) values(";
-        queryString += vals.toString() + ")";
+        queryString += vals.toString() + ",false)";
 
         console.log(queryString);
 
@@ -28,8 +28,8 @@ var orm = {
         });
     },
     updateOne: function(condition, cb) {
-        var queryString = "UPDATE burgers SET 'devoured' = false" +
-        "WHERE ID = " + condition;
+        var queryString = "UPDATE burgers SET devoured = true" +
+        " WHERE ID = " + condition;
     
         console.log(queryString);
         connection.query(queryString, function(err, result) {

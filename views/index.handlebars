@@ -6,17 +6,19 @@
 <ul>
   {{#each burger}}
     {{#unless devoured}}
-      <li>{{this.burger_name}}</li>
+      <li>{{this.burger_name}}<button type="submit" class="change-devoured" data-id={{this.id}}>Eat Me!</button></li>
+      <br>
     {{/unless}}
   {{/each}}
 </ul>
 
-<h2>Eat that burger</h2>
+<h2>Burgers Eaten!</h2>
 
 <ul>
   {{#each burger}}
     {{#if devoured}}
       <li>{{this.burger_name}}</li>
+      <br>
     {{/if}}
   {{/each}}
 </ul>

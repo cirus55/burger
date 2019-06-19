@@ -18,10 +18,11 @@ router.get("/", function(req, res) {
 
 router.post("/api/burgers", function(req, res) {
 
-    console.log(req.body.name);
+    console.log(req.body.burger_name);
 
-    cat.createOne(req.body.name, function(result) {
+    burger.create(req.body.burger_name, function(result) {
       // Send back the ID of the new quote
+      console.log("created burger");
       res.json({ id: result.insertId });
     });
 });
@@ -31,7 +32,7 @@ router.put("/api/burgers/:id", function(req, res) {
   
     console.log(condition);
   
-    burger.updateOne(
+    burger.update(
       condition,
       function(result) {
         if (result.changedRows === 0) {

@@ -8,12 +8,14 @@ var burger = {
         });
     },
     create: function(vals,cb){
-        orm.createOne(vals,cb,function(res){
+        orm.createOne(vals,function(res){
+            console.log("callback create in burger js")
             cb(res);
         });
     },
     update: function(vals,cb){
-        orm.updateOne(vals,cb,function(res){
+        orm.updateOne(vals,function(res){
+            console.log("callback and burger js")
             cb(res);
         });
     }
